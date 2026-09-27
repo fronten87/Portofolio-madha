@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Argya Madha Putra</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #1E293B;
+            --bg-light: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --accent: #E05A47;
+            --text-dark: #0F172A;
+            --text-muted: #64748B;
+            --text-light: #F1F5F9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 4rem 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .slide-dark {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(224, 90, 71, 0.15);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .slide-dark .tag {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 1px solid #E2E8F0;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        ul.custom-list {
+            list-style: none;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        ul.custom-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .profile-frame {
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 3/4;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: 20px;
+        }
+
+        .img-placeholder {
+            width: 100%;
+            height: 160px;
+            background-color: #E2E8F0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border: 1px dashed #CBD5E1;
+        }
+
+        .img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .quote-box {
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .hero-title { font-size: 2.3rem; }
+            .slide { padding: 3rem 6%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: Cover -->
+    <section class="slide slide-dark">
+        <div class="grid-2">
+            <div>
+                <span class="tag">Portofolio Presentation</span>
+                <h1 class="hero-title">ARGYA MADHA PUTRA</h1>
+                <div class="hero-subtitle">Student • Creative & Arts • Public Speaking • Leadership</div>
+                <p class="hero-desc">
+                    Siswa kelas XII SMAN 1 Sutojayan yang aktif memimpin organisasi Rohis tingkat sekolah hingga regional, serta memiliki ketertarikan mendalam pada seni pertunjukan, komunikasi publik, dan desain visual.
+                </p>
+                <br>
+                <p style="font-size: 0.9rem; opacity: 0.7;">📍 Blitar, Jawa Timur</p>
+            </div>
+            <div>
+                <div class="profile-frame">
+                    <img src="foto portofolio/DSC03046.JPG" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 2: About Me -->
+    <section class="slide">
+        <div class="grid-2">
+            <div>
+                <span class="tag">About Me</span>
+                <h2 class="title">Halo, Saya Madha. 👋</h2>
+                <div class="quote-box">
+                    "Bagi saya, sebuah ide akan menjadi lebih berarti ketika mampu dikemas menjadi sesuatu yang menarik, mudah dipahami, dan dapat memberikan dampak bagi orang lain."
+                </div>
+            </div>
+            <div>
+                <p style="margin-bottom: 1rem;">
+                    Saat ini saya merupakan siswa kelas XII SMAN 1 Sutojayan. Saya memiliki ketertarikan besar terhadap dunia komunikasi, ekspresi seni sastra, media, dan pengembangan diri.
+                </p>
+                <p>
+                    Terbiasa memimpin dan terlibat aktif dalam berbagai organisasi kepemudaan, saya senang bekerja dalam tim, berdiskusi, dan terus belajar hal baru.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 3: Skills -->
+    <section class="slide">
+        <span class="tag">My Skills</span>
+        <h2 class="title">Keahlian & Potensi Utama</h2>
+        <div class="grid-3">
+            <div class="card">
+                <div class="img-placeholder">
+                    <img src="foto portofolio/foto-mc.JPG" >
+                </div>
+                <h3 class="card-title">🎙️ Public Speaking</h3>
+                <ul class="custom-list">
+                    <li>MC & Pembawa Acara (Formal & Semi-Formal)</li>
+                    <li>Presentasi Publik & Moderator</li>
+                    <li>Komunikasi Organisasi & Public Relations</li>
+                    <li>Penyampaian Informasi Efektif</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="img-placeholder">
+                    <img src="foto portofolio/daii.jpg">
+                </div>
+                <h3 class="card-title">🎭 Creative, Design & Arts</h3>
+                <ul class="custom-list">
+                    <li>Seni Sastra: Berpuisi, Dai / Da'iyah & Monolog</li>
+                    <li>Desain Poster, Konten & Publikasi</li>
+                    <li>Konsep Visual & Personal Branding</li>
+                    <li>Ekspresi Kreatif Media</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="img-placeholder">
+                    <img src="foto portofolio/leader.jpg">
+                </div>
+                <h3 class="card-title">🤝 Organization & Leadership</h3>
+                <ul class="custom-list">
+                    <li>Kepemimpinan (Leadership) & Teamwork</li>
+                    <li>Event Planning & Management</li>
+                    <li>Koordinasi & Eksekusi Kegiatan</li>
+                    <li>Problem Solving Organisasi</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 4: Organizational Experience (LENGKAP SEMUA PENGALAMAN) -->
+    <section class="slide">
+        <span class="tag">Experience</span>
+        <h2 class="title">Pengalaman Organisasi & Kepemimpinan</h2>
+        
+        <!-- Baris Pertama: Peran Ketua Umum -->
+        <div class="grid-3" style="margin-bottom: 1.5rem;">
+            <div class="card">
+                <div class="img-placeholder">
+                    <img src="foto portofolio/ROHIS-SMA-BETET.jpg">
+                </div>
+                <h3 style="color: var(--text-dark);">Ketua Umum</h3>
+                <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem;">ROHIS SMAN 1 SUTOJAYAN</p>
+                <p style="font-size: 0.8rem; margin-bottom: 0.8rem; color: var(--text-muted);">Tingkat Sekolah</p>
+                <ul class="custom-list">
+                    <li>Kajian, Tadarus & Jumat Berkah</li>
+                    <li>Bakti Sosial & Program Ramadan</li>
+                    <li>Peringatan Hari Besar Islam (PHBI)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="img-placeholder">
+                    <img src="foto portofolio/rohis kab.jpg">
+                </div>
+                <h3 style="color: var(--text-dark);">Ketua Umum</h3>
+                <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem;">ROHIS SMA KABUPATEN BLITAR</p>
+                <p style="font-size: 0.8rem; margin-bottom: 0.8rem; color: var(--text-muted);">Tingkat Kabupaten</p>
+                <p style="font-size: 0.85rem;">Mengkoordinasikan dan mempererat jejaring organisasi Rohis antarsekolah se-Kabupaten Blitar.</p>
+            </div>
+            <div class="card">
+                <div class="img-placeholder">
+                    <img src="foto portofolio/JTM.jpg">
+                </div>
+                <h3 style="color: var(--text-dark);">Ketua Umum</h3>
+                <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem;">ROHIS JTM BLITAR-RAYA</p>
+                <p style="font-size: 0.8rem; margin-bottom: 0.8rem; color: var(--text-muted);">Tingkat Regional</p>
+                <p style="font-size: 0.85rem;">Memimpin konsolidasi, kolaborasi kegiatan, serta pengembangan kapasitas kader muda se-Blitar Raya.</p>
+            </div>
+        </div>
+
+        <!-- Baris Kedua: Peran Anggota (Provinsi & Pramuka) -->
+        <div class="grid-2">
+            <div class="card">
+                <div class="img-placeholder" style="height: 250px; border: none; overflow: hidden; border-radius: 8px; padding: 0;">
+                    <img src="foto portofolio/RHS-SMA-PROV.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
+                </div>
+                <h3 style="color: var(--text-dark);">Anggota</h3>
+                <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem;">ROHIS SMA PROVINSI</p>
+                <p style="font-size: 0.8rem; margin-bottom: 0.5rem; color: var(--text-muted);">Tingkat Jawa Timur</p>
+                <p style="font-size: 0.85rem;">Berpartisipasi aktif dalam kegiatan dan pengembangan jaringan organisasi Rohis di tingkat yang lebih luas.</p>
+            </div>
+            <div class="card">
+                <div class="img-placeholder" style="height: 250px; border: none; overflow: hidden; border-radius: 8px; padding: 0;">
+                    <img src="foto portofolio/PRAMUKA.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: bottom; display: block;">
+                </div> 
+                <h3 style="color: var(--text-dark);">Anggota Aktif</h3>
+                <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem;">PRAMUKA SMAN 1 SUTOJAYAN</p>
+                <p style="font-size: 0.8rem; margin-bottom: 0.5rem; color: var(--text-muted);">Sekolah & Kepanitiaan</p>
+                <p style="font-size: 0.85rem;">Aktif dalam kegiatan kepramukaan, kepanitiaan, serta pengembangan karakter dan kepemimpinan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 5: Teaching & Leadership -->
+    <section class="slide">
+        <div class="grid-2">
+            <div>
+                <span class="tag">Leadership & Teaching</span>
+                <h2 class="title">Pengalaman Mengajar</h2>
+                <p style="margin-bottom: 1rem;">
+                    Memandu dan mengajar kegiatan Kepramukaan di sekolah dasar untuk melatih komunikasi adaptif dan penyampaian materi secara efektif:
+                </p>
+                <ul class="custom-list" style="margin-bottom: 1.5rem;">
+                    <li><b>SDN Jegu 2 (2024-2026)</b></li>
+                    <li><b>SDN Kalitengah 3 (2025-2026)</b></li>
+                    <li><b>MI Sukorejo (2026)</b></li>
+                </ul>
+                <div class="card" style="background-color: var(--bg-dark); color: white;">
+                    <p style="font-size: 0.9rem;">
+                        "Mengajar melatih saya menyampaikan gagasan secara ramah, mudah dipahami, serta mengendalikan audiens anak-anak dengan pendekatan kreatif."
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div class="img-placeholder" style="height: 250px">
+                    <img src="foto portofolio/NGAJAR.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 6: Creative Work & Arts Showcase -->
+    <section class="slide">
+        <span class="tag">Portfolio Showcase</span>
+        <h2 class="title">Galeri Karya Desain & Dokumentasi Panggung</h2>
+        <p style="margin-bottom: 2rem;">Kumpulan hasil desain publikasi serta dokumentasi penampilan panggung seni sastra & event.</p>
+        <div class="grid-3">
+    <div class="card" style="padding: 0; border: none; overflow: hidden; border-radius: 12px; height: 300px;">
+        <img src="foto portofolio/poster.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
+    </div>
+    <div class="card" style="padding: 0; border: none; overflow: hidden; border-radius: 12px; height: 300px;">
+        <img src="foto portofolio/PUISIII.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
+    </div>
+    <div class="card" style="padding: 0; border: none; overflow: hidden; border-radius: 12px; height: 300px;">
+        <img src="foto portofolio/jtm lagi.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
+    </div>
+</div>
+    </section>
+    <section class="slide slide-dark" style="text-align: center; align-items: center;">
+        <span class="tag">Why Me & Collaboration</span>
+        <h2 class="title" style="max-width: 800px;">Siap Berkontribusi Bersama Bicara Blitar</h2>
+        <p style="max-width: 650px; margin-bottom: 2rem; opacity: 0.9;">
+            Dengan pengalaman kepemimpinan organisasi tingkat regional, kemampuan seni sastra, public speaking, serta desain visual, saya siap memberikan kontribusi nyata dan tumbuh bersama tim Bicara Blitar.
+        </p>
+        <div style="font-size: 1.2rem; font-weight: 600; color: var(--accent);">
+            ARGYA MADHA PUTRA
+        </div>
+        <p style="font-size: 0.9rem; opacity: 0.7;">Mari Berkolaborasi & Menghasilkan Karya Bermanfaat!</p>
+    </section>
+
+</body>
+</html>
